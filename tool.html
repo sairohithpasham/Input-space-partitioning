@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Input space partitioning</title>
+        <link rel = "stylesheet" href = "styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href = "https://fonts.googleapis.com/css?family=Inter:400,800,900&display=swap" rel="stylesheet">
+        <script defer src = "script.js"></script> 
+    </head>
+    <body>
+        <div id = "header">
+            <h2>Input space partitioning - Test support tool</h2>
+        </div>
+        <div id = "container">
+            <div id = "dataentry">
+                <h2 class = "charTitle">Characteristics</h2>
+                <ol class = "char-list" data-lists>
+                    
+                </ol>
+                <form action="" data-new-char-form>
+                    <input type = "text" 
+                    class = "new-char"
+                    data-new-char-input
+                    placeholder= "Enter new characteristic"
+                    aria-label = "new char name"
+                    autofocus
+                    />
+                    <button class = "btn create" aria-label="create new char">+</button>
+                </form> 
+                <div class = "results-buttons"> 
+                    <button class = "res btn-primary" onclick="allCombinations()">All Combination</button>
+                    <button class = "res btn-primary" onclick="baseChoice()">Base Choice</button>
+                    <button class = "res btn-primary" onclick="eachChoice()">Each Choice</button>
+                </div>
+            </div>
+            <div id = "viewData" data-char-display-container>
+                <div class = "char-header">
+                    <h2 class= "char-title" data-list-title></h2>
+                    <p class= "block-count" data-list-count></p>
+                </div>
+                <div class="blockbody">
+                    <div class="blocks" data-tasks>
+                    </div>
+                    <div class="new-block-creator">
+                        <form action="" data-new-task-form>
+                            <input type = "text" 
+                            data-new-task-input
+                            class = "new-block"
+                            id = "block-textfield"
+                            placeholder= "Enter new block name"
+                            aria-label = "new block name"
+                            />
+                            <button class = "btn create" aria-label="create new block">+</button>
+                        </form> 
+                    </div>
+                    <div class="deletion">
+                        <button class = "btn-delete btn-primary" data-delete-blocks>Delete selected blocks</button>
+                        <button class = "btn-delete btn-primary" data-delete-char-button>Delete Characteristic</button>
+                    </div>
+                </div>
+            </div>
+            <div id = "results">
+                <h2>Results</h2>
+                <label id = "show-result">
+
+                </label>
+                <br>
+                <button class="clear btn btn-outline-secondary" onclick = clearRes()>Clear Results</button>
+                <button class="clear btn btn-outline-secondary" onclick = clearall()>Clear All</button>
+                <br>
+                <br>
+            </div>
+        </div>
+        <template id = "task-template">
+            <div class="block">
+                <input type="checkbox"/>
+                <label>
+                    <span class = "custom-checkbox"></span>
+                </label>
+            </div>
+        </template>
+    </body>
+</html>
